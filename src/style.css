@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f0f0f5;
+  font-family: 'Trebuchet MS';
+}
+
+#content_wrapper {
+  margin: 40px 80px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* Create event */
+#error_message {
+  display: none;
+  padding: 16px;
+  width: 100%;
+
+  color: #721c24;
+  border-radius: 3px;
+  background-color: red;
+}
+
+/* Top_bar */
+#top_bar {
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Buttons */
+button,
+select,
+input {
+  font-family: 'Trebuchet MS';
+  margin-top: 5px;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+#manage {
+  display: flex;
+  justify-content: right;
+}
+
+#manage > div {
+  margin-left: 7px;
+  margin-right: 7px;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+#table td,
+#table th {
+  border: 1px solid #222;
+}
+
+#table th {
+  background-color: grey;
+  color: white;
+}
+
+td,
+th {
+  padding: 8px;
+}
+
+.event_cell {
+  background-color: greenyellow;
+}
+
+.event_box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.event_box > div {
+  cursor: pointer;
+}
+
+
+
