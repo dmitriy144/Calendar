@@ -2,56 +2,58 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="../src/style.css" />
+    <link rel="stylesheet" href="../src/index.css" />
     <title>Create event</title>
   </head>
   <body>
     <div id="content_wrapper" style="max-width: 400px">
       <div id="error_message"></div>
-      <table>
-        <tr>
-          <td>Name of the event:</td>
-          <td><input id="event_name" type="text" /></td>
-        </tr>
-        <tr>
-          <td>Participants:</td>
-          <td>
-            <select id="members" size="3" multiple="multiple">
-              <option value="alex">Alex</option>
-              <option value="maria">Maria</option>
-              <option value="john">John</option>
-            </select>
-          </td>
-        </tr>
-        <tr>
-          <td>Day:</td>
-          <td>
-            <select id="day">
-              <option value="1">Mon</option>
-              <option value="2">Tue</option>
-              <option value="3">Wed</option>
-              <option value="4">Thu</option>
-              <option value="5">Fri</option>
-            </select>
-          </td>
-        </tr>
-        <tr>
-          <td>Time:</td>
-          <td>
-            <select id="time">
-              <option value="10">10:00</option>
-              <option value="11">11:00</option>
-              <option value="12">12:00</option>
-              <option value="13">13:00</option>
-              <option value="14">14:00</option>
-              <option value="15">15:00</option>
-              <option value="16">16:00</option>
-              <option value="17">17:00</option>
-              <option value="18">18:00</option>
-            </select>
-          </td>
-        </tr>
-      </table>
+      <div id="create_event_form">
+        <table>
+          <tr>
+            <td>Name of the event:</td>
+            <td><input id="event_name" type="text" /></td>
+          </tr>
+          <tr>
+            <td>Participants:</td>
+            <td>
+              <select id="members" size="3" multiple="multiple">
+                <option value="alex">Alex</option>
+                <option value="maria">Maria</option>
+                <option value="john">John</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Day:</td>
+            <td>
+              <select id="day">
+                <option value="1">Mon</option>
+                <option value="2">Tue</option>
+                <option value="3">Wed</option>
+                <option value="4">Thu</option>
+                <option value="5">Fri</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Time:</td>
+            <td>
+              <select id="time">
+                <option value="10">10:00</option>
+                <option value="11">11:00</option>
+                <option value="12">12:00</option>
+                <option value="13">13:00</option>
+                <option value="14">14:00</option>
+                <option value="15">15:00</option>
+                <option value="16">16:00</option>
+                <option value="17">17:00</option>
+                <option value="18">18:00</option>
+              </select>
+            </td>
+          </tr>
+        </table>
+      </div>
       <div id="manage">
         <div>
           <a href="../index.html">
