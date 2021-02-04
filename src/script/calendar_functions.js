@@ -47,13 +47,40 @@ function deleteEventProcedure(deleteBtn) {
     const calendarEventBox = deleteBtn.parentNode;
     const currentCell = calendarEventBox.parentNode;
     const eventName = calendarEventBox.querySelector('p').textContent;
-    // eslint-disable-next-line
-    if (confirm(`Are you sure you want to delete "${eventName}" event?`)) {
-      localStorage.removeItem(calendarEventBox.dataset.localStorageKey);
-      currentCell.removeChild(calendarEventBox);
-      currentCell.classList.remove('event_cell');
-    }
+    const modalWindow = document.querySelector('#modal');
+    const deleteBtns = Array.from(document.querySelectorAll('.delete-btn'));
+
+    modalWindow.querySelector('#message').textContent = `Are you sure you want to delete "${eventName}" event?`;
+    modalWindow.style.display = 'flex';
+
+    deleteBtns.forEach((btn) => {
+      btn.classList.remove('delete-btn');
+    });
+
+    modalWindow.addEventListener('click', function deleteEvent(event) {
+      if (event.target.id === 'modal_confirm') {
+        modalWindow.style.display = 'none';
+        localStorage.removeItem(calendarEventBox.dataset.localStorageKey);
+        currentCell.removeChild(calendarEventBox);
+        currentCell.classList.remove('event_cell');
+
+        const deletedEventBtnIndex = deleteBtns.indexOf(deleteBtn);
+        deleteBtns.splice(deletedEventBtnIndex, 1);
+        deleteBtns.forEach((btn) => {
+          btn.classList.add('delete-btn');
+        });
+
+        modalWindow.removeEventListener('click', deleteEvent);
+      } else if (event.target.id === 'modal_abort') {
+        deleteBtns.forEach((btn) => {
+          btn.classList.add('delete-btn');
+        });
+        modalWindow.removeEventListener('click', deleteEvent);
+        modalWindow.style.display = 'none';
+      }
+    });
   }
 }
+
 // eslint-disable-next-line
 export { parseDataFromLocalStorage, renderCalendarWithMemberFilter, deleteAllEventBoxes, deleteEventProcedure };
