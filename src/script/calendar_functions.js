@@ -11,7 +11,7 @@ function parseDataFromLocalStorage() {
   return localStorageParsedData;
 }
 
-function renderCalendarWithMemberFilter(data, filter) {
+function renderCalendarWithMemberFilter(data, filter, deleteBtn) {
   let filteredData = data;
 
   if (filter) {
@@ -23,7 +23,7 @@ function renderCalendarWithMemberFilter(data, filter) {
     const calendarCell = row.querySelector(`td:nth-child(${event.day})`);
 
     const eventBox = document.createElement('div');
-    eventBox.innerHTML = `<p>${event.name}</p><div class="delete-btn">X</div>`;
+    eventBox.innerHTML = `<p>${event.name}</p><img class="delete-btn" src="${deleteBtn}">`;
     eventBox.setAttribute('data-local-storage-key', `_event${event.day}${event.time}`);
     eventBox.classList.add('event_box');
 

@@ -1,19 +1,25 @@
 {
-  "name": "env",
+  "name": "calendar",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:css": "npx sass scss/style.scss src/index.css"
+    "build:css": "npx sass ./src/scss/style.scss ./src/index.css",
+    "build": "webpack"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "css-loader": "^5.0.1",
     "eslint": "^7.18.0",
     "eslint-config-airbnb": "^18.2.1",
-    "rollup": "^2.38.4",
-    "sass": "^1.32.6"
+    "html-webpack-plugin": "^5.0.0",
+    "sass": "^1.32.6",
+    "sass-loader": "^10.1.1",
+    "style-loader": "^2.0.0",
+    "svg-url-loader": "^7.1.1",
+    "webpack": "^5.20.0",
+    "webpack-cli": "^4.5.0"
   }
 }

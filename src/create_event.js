@@ -1,4 +1,6 @@
-import { getSelectedMembers, isValid, saveToLocalStorage } from '../script/create_event_functions.js';
+// eslint-disable-next-line
+import { getSelectedMembers, isValid, saveToLocalStorage } from './script/create_event_functions.js';
+import './scss/style.scss';
 
 document.querySelector('#create-event').addEventListener('click', () => {
   const newEventData = {
